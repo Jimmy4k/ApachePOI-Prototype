@@ -35,7 +35,7 @@ import resources.CostType;
 
 public class TestProjekt extends JFrame {
 	/**
-	 * 
+	 *  This is the Prototype for Export and Import with the ApchePOI liberty.
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
