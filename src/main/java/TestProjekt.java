@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.print.DocFlavor.STRING;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,10 +20,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import org.apache.commons.math3.exception.NullArgumentException;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -34,9 +29,6 @@ import resources.CostTableEntry;
 import resources.CostType;
 
 public class TestProjekt extends JFrame {
-	/**
-	 *  This is the Prototype for Export and Import with the ApchePOI liberty.
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable table;
@@ -63,7 +55,6 @@ public class TestProjekt extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -154,6 +145,7 @@ public class TestProjekt extends JFrame {
 				insertValuesToTable(importFromExcel(costMap));
 			}
 		});
+		// CECKSTYLE:OFF
 		btnImportButton.setBounds(567, 305, 142, 23);
 		contentPane.add(btnImportButton);
 
@@ -232,11 +224,6 @@ public class TestProjekt extends JFrame {
 		XSSFSheet sheet = workbook.createSheet("CostList");
 		XSSFRow row = sheet.createRow(0);
 		XSSFCell cell;
-
-		CellStyle rightAligned = workbook.createCellStyle();
-		rightAligned.setAlignment(HorizontalAlignment.RIGHT);
-		CellStyle leftAligned = workbook.createCellStyle();
-		leftAligned.setAlignment(HorizontalAlignment.LEFT);
 
 		int rowNum;
 		int colNum;
